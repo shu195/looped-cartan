@@ -252,6 +252,10 @@ def main():
     out_text = "".join(itos[i] for i in idx[0].tolist())
     print("\n=== Sample Output ===\n", out_text)
 
+    ckpt_path = "looped_cartan_json_261k.pt"
+    torch.save({"model": model.state_dict(), "stoi": stoi, "itos": itos}, ckpt_path)
+    print(f"Saved checkpoint to {ckpt_path}")
+
 
 if __name__ == "__main__":
     main()
